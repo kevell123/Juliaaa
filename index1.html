@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Особиста сторінка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #gallery {
+            display: none; /* Сховати галерею до введення пароля */
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ласкаво просимо на мою особисту сторінку</h1>
+
+        <label for="password">Введіть пароль:</label>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Увійти</button>
+
+        <div id="gallery">
+            <!-- Зменшені фотографії -->
+            <img src="photo1.jpg" alt="Фото 1">
+            <img src="photo2.jpg" alt="Фото 2">
+            <!-- і так далі -->
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === 'love') {
+                document.getElementById('gallery').style.display = 'block';
+            } else {
+                alert('Неправильний пароль. Спробуйте ще раз.');
+            }
+        }
+    </script>
+
+</body>
+</html>
